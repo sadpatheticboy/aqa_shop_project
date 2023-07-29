@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
+from pages.cart_page import CartPage
 
 
 def test_buy_product():
@@ -20,6 +21,9 @@ def test_buy_product():
 
     mp = MainPage(driver)  # mp = Main Page
     mp.select_product()
+
+    cp = CartPage(driver)
+    cp.product_confirm()
 
     # enter_cart = WebDriverWait(driver, 10).until(
     #     expected_conditions.element_to_be_clickable((By.XPATH, "//div[@id='shopping_cart_container']")))
