@@ -1,8 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+
+from pages.finish_page import FinishPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.cart_page import CartPage
+from pages.overview_page import OverviewPage
 from pages.user_information_page import UserInformationPage
 
 
@@ -25,6 +28,12 @@ def test_buy_product():
 
     uip = UserInformationPage(driver)
     uip.input_user_information()
+
+    ov = OverviewPage(driver)
+    ov.payment()
+
+    fp = FinishPage(driver)
+    fp.finish()
 
     # enter_cart = WebDriverWait(driver, 10).until(
     #     expected_conditions.element_to_be_clickable((By.XPATH, "//div[@id='shopping_cart_container']")))

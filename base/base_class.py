@@ -1,3 +1,6 @@
+import datetime
+
+
 class Base:
     def __init__(self, driver):
         self.driver = driver
@@ -13,3 +16,8 @@ class Base:
         assert value_word == result
         print('All Correct')
 
+    # Method Screenshot
+    def take_screenshot(self):
+        current_moment = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
+        name_screenshot = f'screenshot_{current_moment}.png'
+        self.driver.save_screenshot(f'.\\screen\\{name_screenshot}')
