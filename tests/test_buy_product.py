@@ -21,4 +21,3 @@ def test_buy_product():
         expected_conditions.element_to_be_clickable((By.XPATH, "//div[@id='shopping_cart_container']")))
     enter_cart.click()  # Вход в корзину
     print('Click cart')
-
