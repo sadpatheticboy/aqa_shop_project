@@ -53,7 +53,6 @@ class LoginPage(Base):
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.get_current_url()
-
         self.input_username('standard_user')
         self.input_password('secret_sauce')
         self.click_login_button()
