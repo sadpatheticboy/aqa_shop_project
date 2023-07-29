@@ -34,8 +34,3 @@ def test_buy_product():
 
     fp = FinishPage(driver)
     fp.finish()
-
-    # enter_cart = WebDriverWait(driver, 10).until(
-    #     expected_conditions.element_to_be_clickable((By.XPATH, "//div[@id='shopping_cart_container']")))
-    # enter_cart.click()  # Entry Cart
-    # print('Click Cart')

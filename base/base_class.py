@@ -21,3 +21,9 @@ class Base:
         current_moment = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
         name_screenshot = f'screenshot_{current_moment}.png'
         self.driver.save_screenshot(f'.\\screen\\{name_screenshot}')
+
+    # Method Assert Url Check
+    def assert_url_check(self, result):
+        get_url = self.driver.current_url
+        assert get_url == result
+        print('All Good')

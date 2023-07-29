@@ -9,4 +9,5 @@ class FinishPage(Base):
     # Methods
     def finish(self):
         self.get_current_url()
+        self.assert_url_check("https://www.saucedemo.com/checkout-complete.html")
         self.take_screenshot()
