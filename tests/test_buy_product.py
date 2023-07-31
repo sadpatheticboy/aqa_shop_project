@@ -10,10 +10,11 @@ from pages.cart_page import CartPage
 from pages.user_information_page import UserInformationPage
 from pages.overview_page import OverviewPage
 from pages.finish_page import FinishPage
+from utilities.conftest import set_up
 
 
 @pytest.mark.run(order=3)
-def test_buy_product_1():
+def test_buy_product_1(set_up):
     # Подключение к Chrome
     driver = webdriver.ChromeOptions()
     driver.add_experimental_option('detach', True)
@@ -36,7 +37,7 @@ def test_buy_product_1():
 
 
 @pytest.mark.run(order=1)
-def test_buy_product_2():
+def test_buy_product_2(set_up):
     # Подключение к Chrome
     driver = webdriver.ChromeOptions()
     driver.add_experimental_option('detach', True)
@@ -59,7 +60,7 @@ def test_buy_product_2():
 
 
 @pytest.mark.run(order=2)
-def test_buy_product_3():
+def test_buy_product_3(set_up):
     # Подключение к Chrome
     driver = webdriver.ChromeOptions()
     driver.add_experimental_option('detach', True)
@@ -81,13 +82,14 @@ def test_buy_product_3():
     driver.quit()
 
 
-def test_complete_purchase():
+@pytest.mark.run(order=4)
+def test_full_purchase(set_up):
     # Подключение к Chrome
     driver = webdriver.ChromeOptions()
     driver.add_experimental_option('detach', True)
     path_chrome = Service('D:/Necessary/QA/drivers')
     driver = webdriver.Chrome(options=driver, service=path_chrome)
-    print('Start Test')
+    print('Start Test Full Purchase')
 
     lp = LoginPage(driver)
     lp.authorization()
@@ -106,3 +108,7 @@ def test_complete_purchase():
 
     fp = FinishPage(driver)
     fp.finish()
+
+    print('Finish Test Full Purchase')
+    time.sleep(1)
+    driver.quit()
