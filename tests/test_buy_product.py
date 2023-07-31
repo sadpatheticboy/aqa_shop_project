@@ -80,28 +80,29 @@ def test_buy_product_3():
     time.sleep(1)
     driver.quit()
 
-# def test_buy_product():
-#     # Подключение к Chrome
-#     driver = webdriver.ChromeOptions()
-#     driver.add_experimental_option('detach', True)
-#     path_chrome = Service('D:/Necessary/QA/drivers')
-#     driver = webdriver.Chrome(options=driver, service=path_chrome)
-#     print('Start Test')
-#
-#     lp = LoginPage(driver)
-#     lp.authorization()
-#
-#     mp = MainPage(driver)
-#     mp.select_product()
-#
-#     cp = CartPage(driver)
-#     cp.product_confirm()
-#
-#     uip = UserInformationPage(driver)
-#     uip.input_user_information()
-#
-#     ov = OverviewPage(driver)
-#     ov.payment()
-#
-#     fp = FinishPage(driver)
-#     fp.finish()
+
+def test_complete_purchase():
+    # Подключение к Chrome
+    driver = webdriver.ChromeOptions()
+    driver.add_experimental_option('detach', True)
+    path_chrome = Service('D:/Necessary/QA/drivers')
+    driver = webdriver.Chrome(options=driver, service=path_chrome)
+    print('Start Test')
+
+    lp = LoginPage(driver)
+    lp.authorization()
+
+    mp = MainPage(driver)
+    mp.select_product_1()
+
+    cp = CartPage(driver)
+    cp.product_confirm()
+
+    uip = UserInformationPage(driver)
+    uip.input_user_information()
+
+    ov = OverviewPage(driver)
+    ov.payment()
+
+    fp = FinishPage(driver)
+    fp.finish()
