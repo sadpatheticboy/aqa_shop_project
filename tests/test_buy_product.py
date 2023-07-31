@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-from pages.finish_page import FinishPage
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.cart_page import CartPage
-from pages.overview_page import OverviewPage
 from pages.user_information_page import UserInformationPage
+from pages.overview_page import OverviewPage
+from pages.finish_page import FinishPage
 
 
 def test_buy_product():
