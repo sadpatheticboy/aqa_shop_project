@@ -3,9 +3,10 @@ from selenium.webdriver.chrome.service import Service
 
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
+from utilities.conftest import set_group
 
 
-def test_link_about():
+def test_link_about(set_group):
     # Подключение к Chrome
     driver = webdriver.ChromeOptions()
     driver.add_experimental_option('detach', True)
