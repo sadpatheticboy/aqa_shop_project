@@ -18,7 +18,7 @@ class Base:
 
     # Method Screenshot
     def take_screenshot(self):
-        current_moment = datetime.datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
+        current_moment = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         name_screenshot = f'screenshot_{current_moment}.png'
         self.driver.save_screenshot(f'.\\screen\\{name_screenshot}')
 

@@ -8,10 +8,14 @@ from utilities.conftest import set_group
 
 def test_link_about(set_group):
     # Подключение к Chrome
-    driver = webdriver.ChromeOptions()
-    driver.add_experimental_option('detach', True)
-    path_chrome = Service('D:/Necessary/QA/drivers')
-    driver = webdriver.Chrome(options=driver, service=path_chrome)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_experimental_option("detach", True)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.page_load_strategy = 'eager'
+    path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
+    driver = webdriver.Chrome(options=options, service=path_chrome)
     print('Start Test')
 
     lp = LoginPage(driver)

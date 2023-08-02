@@ -16,10 +16,14 @@ from utilities.conftest import set_up
 @pytest.mark.run(order=3)
 def test_buy_product_1(set_up):
     # Подключение к Chrome
-    driver = webdriver.ChromeOptions()
-    driver.add_experimental_option('detach', True)
-    path_chrome = Service('D:/Necessary/QA/drivers')
-    driver = webdriver.Chrome(options=driver, service=path_chrome)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_experimental_option("detach", True)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.page_load_strategy = 'eager'
+    path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
+    driver = webdriver.Chrome(options=options, service=path_chrome)
     print('Start Test 1')
 
     lp = LoginPage(driver)
@@ -39,10 +43,14 @@ def test_buy_product_1(set_up):
 @pytest.mark.run(order=1)
 def test_buy_product_2(set_up):
     # Подключение к Chrome
-    driver = webdriver.ChromeOptions()
-    driver.add_experimental_option('detach', True)
-    path_chrome = Service('D:/Necessary/QA/drivers')
-    driver = webdriver.Chrome(options=driver, service=path_chrome)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_experimental_option("detach", True)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.page_load_strategy = 'eager'
+    path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
+    driver = webdriver.Chrome(options=options, service=path_chrome)
     print('Start Test 2')
 
     lp = LoginPage(driver)
@@ -62,10 +70,14 @@ def test_buy_product_2(set_up):
 @pytest.mark.run(order=2)
 def test_buy_product_3(set_up):
     # Подключение к Chrome
-    driver = webdriver.ChromeOptions()
-    driver.add_experimental_option('detach', True)
-    path_chrome = Service('D:/Necessary/QA/drivers')
-    driver = webdriver.Chrome(options=driver, service=path_chrome)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_experimental_option("detach", True)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.page_load_strategy = 'eager'
+    path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
+    driver = webdriver.Chrome(options=options, service=path_chrome)
     print('Start Test 3')
 
     lp = LoginPage(driver)
@@ -85,10 +97,14 @@ def test_buy_product_3(set_up):
 @pytest.mark.run(order=4)
 def test_full_purchase(set_up):
     # Подключение к Chrome
-    driver = webdriver.ChromeOptions()
-    driver.add_experimental_option('detach', True)
-    path_chrome = Service('D:/Necessary/QA/drivers')
-    driver = webdriver.Chrome(options=driver, service=path_chrome)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_experimental_option("detach", True)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.page_load_strategy = 'eager'
+    path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
+    driver = webdriver.Chrome(options=options, service=path_chrome)
     print('Start Test Full Purchase')
 
     lp = LoginPage(driver)
