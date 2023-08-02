@@ -1,3 +1,5 @@
+import allure
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -6,7 +8,8 @@ from pages.main_page import MainPage
 from utilities.conftest import set_group
 
 
-def test_link_about(set_group):
+@allure.description("Test Link About")
+def test_link_about():
     # Подключение к Chrome
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')

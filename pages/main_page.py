@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -12,7 +14,7 @@ class MainPage(Base):
         self.driver = driver
 
     # Locators
-    add_to_cart_button_1 = "//button[@id='add-to-cart-sauce-labs-backpack']"
+    add_to_cart_button_1 = "//button[@id='add-to-cart-sauce-labs-backpackc']"
     add_to_cart_button_2 = "//button[@id='add-to-cart-sauce-labs-bike-light']"
     add_to_cart_button_3 = "//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']"
     cart_button = "//div[@id='shopping_cart_container']"
@@ -78,11 +80,12 @@ class MainPage(Base):
         Logger.add_end_step(url=self.driver.current_url, method="select_product_1")
 
     def select_product_2(self):
-        Logger.add_start_step(method="select_product_2")
-        self.get_current_url()
-        self.click_add_to_cart_button_2()
-        self.click_cart_button()
-        Logger.add_end_step(url=self.driver.current_url, method="select_product_2")
+        with allure.step("Select Product 1"):
+            Logger.add_start_step(method="select_product_2")
+            self.get_current_url()
+            self.click_add_to_cart_button_2()
+            self.click_cart_button()
+            Logger.add_end_step(url=self.driver.current_url, method="select_product_2")
 
     def select_product_3(self):
         Logger.add_start_step(method="select_product_3")
@@ -92,9 +95,10 @@ class MainPage(Base):
         Logger.add_end_step(url=self.driver.current_url, method="select_product_3")
 
     def go_to_menu_about(self):
-        Logger.add_start_step(method="go_to_menu_about")
-        self.get_current_url()
-        self.click_menu_button()
-        self.click_link_about()
-        self.assert_url_check('https://saucelabs.com/')
-        Logger.add_end_step(url=self.driver.current_url, method="go_to_menu_about")
+        with allure.step("Go To Menu About"):
+            Logger.add_start_step(method="go_to_menu_about")
+            self.get_current_url()
+            self.click_menu_button()
+            self.click_link_about()
+            self.assert_url_check('https://saucelabs.com/')
+            Logger.add_end_step(url=self.driver.current_url, method="go_to_menu_about")

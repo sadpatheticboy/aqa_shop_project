@@ -1,3 +1,5 @@
+import allure
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
@@ -28,9 +30,8 @@ class CartPage(Base):
 
     # Methods
     def product_confirm(self):
-        Logger.add_start_step(method="product_confirm")
-        self.get_current_url()
-        self.click_checkout_button()
-        Logger.add_end_step(url=self.driver.current_url, method="product_confirm")
-
-
+        with allure.step("Product Confirm"):
+            Logger.add_start_step(method="product_confirm")
+            self.get_current_url()
+            self.click_checkout_button()
+            Logger.add_end_step(url=self.driver.current_url, method="product_confirm")
