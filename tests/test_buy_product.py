@@ -41,31 +41,31 @@ from utilities.conftest import set_up
 #     driver.quit()
 #
 #
-# @pytest.mark.run(order=1)
-# def test_buy_product_2(set_up):
-#     # Подключение к Chrome
-#     options = webdriver.ChromeOptions()
-#     options.add_argument('--ignore-certificate-errors')
-#     options.add_argument('--ignore-ssl-errors')
-#     options.add_experimental_option("detach", True)
-#     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-#     options.page_load_strategy = 'eager'
-#     path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
-#     driver = webdriver.Chrome(options=options, service=path_chrome)
-#     print('Start Test 2')
-#
-#     lp = LoginPage(driver)
-#     lp.authorization()
-#
-#     mp = MainPage(driver)
-#     mp.select_product_2()
-#
-#     cp = CartPage(driver)
-#     cp.product_confirm()
-#
-#     print('Finish Test 2')
-#     time.sleep(1)
-#     driver.quit()
+@pytest.mark.run(order=1)
+def git(set_up):
+    # Подключение к Chrome
+    options = webdriver.ChromeOptions()
+    options.add_argument('--ignore-certificate-errors')
+    options.add_argument('--ignore-ssl-errors')
+    options.add_experimental_option("detach", True)
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    options.page_load_strategy = 'eager'
+    path_chrome = Service(executable_path='D:/Necessary/QA/drivers/chromedriver.exe')
+    driver = webdriver.Chrome(options=options, service=path_chrome)
+    print('Start Test 2')
+
+    lp = LoginPage(driver)
+    lp.authorization()
+
+    mp = MainPage(driver)
+    mp.select_product_2()
+
+    cp = CartPage(driver)
+    cp.product_confirm()
+
+    print('Finish Test 2')
+    time.sleep(1)
+    driver.quit()
 #
 #
 # @pytest.mark.run(order=2)
