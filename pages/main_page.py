@@ -14,7 +14,7 @@ class MainPage(Base):
         self.driver = driver
 
     # Locators
-    add_to_cart_button_1 = "//button[@id='add-to-cart-sauce-labs-backpackc']"
+    add_to_cart_button_1 = "#add-to-cart-sauce-labs-backpack"
     add_to_cart_button_2 = "//button[@id='add-to-cart-sauce-labs-bike-light']"
     add_to_cart_button_3 = "//button[@id='add-to-cart-sauce-labs-bolt-t-shirt']"
     cart_button = "//div[@id='shopping_cart_container']"
@@ -24,7 +24,7 @@ class MainPage(Base):
     # Getters
     def get_add_to_cart_button_1(self):
         return WebDriverWait(self.driver, 10).until(
-            expected_conditions.element_to_be_clickable((By.XPATH, self.add_to_cart_button_1)))
+            expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, self.add_to_cart_button_1)))
 
     def get_add_to_cart_button_2(self):
         return WebDriverWait(self.driver, 10).until(
