@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 
 from pages.login_page import LoginPage
 from pages.main_page import MainPage
-from utilities.conftest import set_group
 
 
 @allure.description("Test Link About")

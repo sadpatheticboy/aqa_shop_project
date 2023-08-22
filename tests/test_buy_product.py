@@ -15,6 +15,7 @@ from utilities.conftest import set_up
 
 
 @pytest.mark.run(order=3)
+@allure.description("Test Buy Product 1")
 def test_buy_product_1(set_up):
     # Подключение к Chrome
     options = webdriver.ChromeOptions()
@@ -42,7 +43,7 @@ def test_buy_product_1(set_up):
 
 
 @pytest.mark.run(order=1)
-def git(set_up):
+def test_buy_product_2(set_up):
     # Подключение к Chrome
     options = webdriver.ChromeOptions()
     options.add_argument('--ignore-certificate-errors')
