@@ -73,14 +73,15 @@ class MainPage(Base):
 
     # Methods
     def select_product_1(self):
-        Logger.add_start_step(method="select_product_1")
-        self.get_current_url()
-        self.click_add_to_cart_button_1()
-        self.click_cart_button()
-        Logger.add_end_step(url=self.driver.current_url, method="select_product_1")
+        with allure.step("Select Product 1"):
+            Logger.add_start_step(method="select_product_1")
+            self.get_current_url()
+            self.click_add_to_cart_button_1()
+            self.click_cart_button()
+            Logger.add_end_step(url=self.driver.current_url, method="select_product_1")
 
     def select_product_2(self):
-        with allure.step("Select Product 1"):
+        with allure.step("Select Product 2"):
             Logger.add_start_step(method="select_product_2")
             self.get_current_url()
             self.click_add_to_cart_button_2()
@@ -88,11 +89,12 @@ class MainPage(Base):
             Logger.add_end_step(url=self.driver.current_url, method="select_product_2")
 
     def select_product_3(self):
-        Logger.add_start_step(method="select_product_3")
-        self.get_current_url()
-        self.click_add_to_cart_button_3()
-        self.click_cart_button()
-        Logger.add_end_step(url=self.driver.current_url, method="select_product_3")
+        with allure.step("Select Product 3"):
+            Logger.add_start_step(method="select_product_3")
+            self.get_current_url()
+            self.click_add_to_cart_button_3()
+            self.click_cart_button()
+            Logger.add_end_step(url=self.driver.current_url, method="select_product_3")
 
     def go_to_menu_about(self):
         with allure.step("Go To Menu About"):
