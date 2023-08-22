@@ -43,6 +43,7 @@ def test_buy_product_1(set_up):
 
 
 @pytest.mark.run(order=1)
+@allure.description("Test Buy Product 2")
 def test_buy_product_2(set_up):
     # Подключение к Chrome
     options = webdriver.ChromeOptions()
@@ -70,6 +71,7 @@ def test_buy_product_2(set_up):
 
 
 @pytest.mark.run(order=2)
+@allure.description("Test Buy Product 3")
 def test_buy_product_3(set_up):
     # Подключение к Chrome
     options = webdriver.ChromeOptions()
